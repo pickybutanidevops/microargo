@@ -6,7 +6,7 @@ metadata:
 spec:
   destination:
     namespace: micros  # Namespace where the microservices will be deployed
-    server: https://kubernetes.micros.svc # Kubernetes API server URL
+    server: https://kubernetes.default.svc # Kubernetes API server URL
   source:
     repoURL: https://github.com/pickybutanidevops/microargo.git
     path: .
