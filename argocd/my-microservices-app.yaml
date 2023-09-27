@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-microservices-app
+  namespace: argocd
+spec:
+  destination:
+    namespace: micros  # Namespace where the microservices will be deployed
+    server: https://kubernetes.micros.svc # Kubernetes API server URL
+  source:
+    repoURL: https://github.com/pickybutanidevops/microargo.git
+    path: .
+    targetRevision: HEAD
+  project: default
+  syncPolicy:
+    automated:
+      prune: true  # Remove resources that are no longer defined in Git
